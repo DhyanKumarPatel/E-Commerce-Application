@@ -1,6 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Payment Option"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#555555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- CASH ON DELIVERY -->
+
+    <TextView
+        android:id="@+id/tvCash"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:paddingStart="14dp"
+        android:text="Cash On Delivery"
+        android:textSize="14sp"
+        android:textColor="#A5ADBA"
+        android:background="@drawable/bg_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <RadioButton
+        android:id="@+id/radioCash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:buttonTint="#42A5F5"
+        app:layout_constraintTop_toTopOf="@id/tvCash"
+        app:layout_constraintBottom_toBottomOf="@id/tvCash"
+        app:layout_constraintEnd_toEndOf="@id/tvCash" />
+
+
+    <!-- INTERNET BANKING -->
+
+    <TextView
+        android:id="@+id/tvInternetBanking"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:paddingStart="14dp"
+        android:text="Internet Banking"
+        android:textSize="14sp"
+        android:textColor="#A5ADBA"
+        android:background="@drawable/bg_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCash" />
+
+    <RadioButton
+        android:id="@+id/radioInternetBanking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:buttonTint="#42A5F5"
+        app:layout_constraintTop_toTopOf="@id/tvInternetBanking"
+        app:layout_constraintBottom_toBottomOf="@id/tvInternetBanking"
+        app:layout_constraintEnd_toEndOf="@id/tvInternetBanking" />
+
+
+    <!-- CARD -->
+
+    <TextView
+        android:id="@+id/tvCard"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:paddingStart="14dp"
+        android:text="Debit Card / Credit Card"
+        android:textSize="14sp"
+        android:textColor="#A5ADBA"
+        android:background="@drawable/bg_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvInternetBanking" />
+
+    <RadioButton
+        android:id="@+id/radioCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:buttonTint="#42A5F5"
+        app:layout_constraintTop_toTopOf="@id/tvCard"
+        app:layout_constraintBottom_toBottomOf="@id/tvCard"
+        app:layout_constraintEnd_toEndOf="@id/tvCard" />
+
+
+    <!-- PAYPAL -->
+
+    <TextView
+        android:id="@+id/tvPayPal"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:paddingStart="14dp"
+        android:text="Pay Pal"
+        android:textSize="14sp"
+        android:textColor="#A5ADBA"
+        android:background="@drawable/bg_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCard" />
+
+    <RadioButton
+        android:id="@+id/radioPayPal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:buttonTint="#42A5F5"
+        app:layout_constraintTop_toTopOf="@id/tvPayPal"
+        app:layout_constraintBottom_toBottomOf="@id/tvPayPal"
+        app:layout_constraintEnd_toEndOf="@id/tvPayPal" />
+
+
+    <!-- NEXT BUTTON -->
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="4dp"
+        android:text="NEXT"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:letterSpacing="0.15"
+        android:backgroundTint="#42A5F5"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

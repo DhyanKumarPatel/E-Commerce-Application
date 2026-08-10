@@ -1,4 +1,4 @@
-package com.code4galaxy.e_commerceapp.view
+package com.code4galaxy.e_commerceapp.view.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

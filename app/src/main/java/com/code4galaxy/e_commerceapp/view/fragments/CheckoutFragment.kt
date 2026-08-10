@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.code4galaxy.e_commerceapp.R
 import com.code4galaxy.e_commerceapp.databinding.FragmentCheckoutBinding
-import com.code4galaxy.e_commerceapp.view.CheckoutViewPagerAdapter
+import com.code4galaxy.e_commerceapp.view.adapters.CheckoutViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class CheckoutFragment: Fragment() {

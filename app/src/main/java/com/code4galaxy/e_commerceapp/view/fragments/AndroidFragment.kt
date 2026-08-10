@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.code4galaxy.e_commerceapp.model.Product
-import com.code4galaxy.e_commerceapp.view.ProductAdapter
+import com.code4galaxy.e_commerceapp.view.adapters.ProductAdapter
 import com.code4galaxy.e_commerceapp.R
 import com.code4galaxy.e_commerceapp.databinding.FragmentAndroidBinding
 

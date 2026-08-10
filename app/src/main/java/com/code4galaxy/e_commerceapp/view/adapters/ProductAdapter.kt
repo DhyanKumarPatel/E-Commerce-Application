@@ -1,4 +1,4 @@
-package com.code4galaxy.e_commerceapp.view
+package com.code4galaxy.e_commerceapp.view.adapters
 
 import android.view.LayoutInflater
 import android.view.View

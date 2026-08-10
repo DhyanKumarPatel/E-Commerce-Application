@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.code4galaxy.e_commerceapp.view.SmartPhoneViewPagerAdapter
+import com.code4galaxy.e_commerceapp.view.adapters.SmartPhoneViewPagerAdapter
 import com.code4galaxy.e_commerceapp.databinding.FragmentSmartphonesBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
