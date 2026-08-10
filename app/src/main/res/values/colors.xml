@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="titleColor">#FF4A0E</color>
+    <color name="subTitle">#706C6C</color>
+    <color name="toolBar">#0099FF</color>
+    <color name="product_title">#FF7043</color>
+    <color name="product_desc">#667080</color>
+    <color name="tabs">#D7D7D7</color>
+    <color name="login_register">#FF8A65</color>
+    <color name="login_register_text_view_color">#8A9AAF</color>
+</resources>

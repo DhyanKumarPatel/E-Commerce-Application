@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">E-commerceApp</string>
+    <string name="navigation_drawer_open">open\n</string>
+    <string name="navigation_drawer_close">close\n</string>
+</resources>

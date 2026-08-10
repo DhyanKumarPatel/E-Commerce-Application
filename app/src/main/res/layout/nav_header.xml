@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="bottom"
+    android:background="@color/white"
+    android:layout_height="150dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvName"
+        android:text="Welcome John"
+        android:textSize="26dp"
+        android:textColor="@color/titleColor"
+        android:textStyle="bold"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvEmail"
+        android:text="john.parker@mail.com"
+        android:layout_marginTop="16dp"
+        android:textSize="16dp"
+        android:textColor="@color/subTitle"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvContactNumber"
+        android:text="+1 8789 8582 41"
+        android:textSize="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/subTitle"
+        />
+</LinearLayout>
