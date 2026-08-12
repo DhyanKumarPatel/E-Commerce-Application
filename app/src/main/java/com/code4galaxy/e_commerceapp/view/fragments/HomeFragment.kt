@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.code4galaxy.e_commerceapp.R
 import com.code4galaxy.e_commerceapp.databinding.FragmentHomeBinding
 import com.code4galaxy.e_commerceapp.network.RetrofitClient
 import com.code4galaxy.e_commerceapp.repository.CategoryRepositoryImpl
@@ -56,11 +58,23 @@ private lateinit var viewModel: CategoryViewModel
                     binding.rvCategories.adapter =
                         CategoryAdapter(response.categories) { category ->
 
-                            Toast.makeText(
-                                requireContext(),
-                                category.category_name,
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            val bundle = Bundle().apply {
+
+                                putString(
+                                    "categoryId",
+                                    category.category_id
+                                )
+
+                                putString(
+                                    "categoryName",
+                                    category.category_name
+                                )
+                            }
+
+                            findNavController().navigate(
+                                R.id.smartPhoneFragment, bundle
+                            )
+
                         }
                 }
 
