@@ -1,6 +1,7 @@
 package com.code4galaxy.e_commerceapp.network
 
 import com.code4galaxy.e_commerceapp.model.CategoryResponse
+import com.code4galaxy.e_commerceapp.model.ProductDetailsResponse
 import com.code4galaxy.e_commerceapp.model.ProductResponse
 import com.code4galaxy.e_commerceapp.model.SubCategoryResponse
 import retrofit2.http.GET
@@ -23,4 +24,9 @@ interface ApiServices {
     suspend fun getProducts(
         @Path("sub_category_id") subCategoryId: String
     ): ProductResponse
+
+    @GET("Product/details/{product_id}")
+    suspend fun getProductDetails(
+        @Path("product_id") productId: String
+    ): ProductDetailsResponse
 }

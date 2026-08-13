@@ -47,4 +47,15 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.code4galaxy.e_commerceapp.view.fragments.ProductDetailsFragment"
+        android:label="Details">
+
+        <argument
+            android:name="productId"
+            app:argType="string" />
+
+    </fragment>
+
 </navigation>

@@ -8,7 +8,9 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.code4galaxy.e_commerceapp.R
 import com.code4galaxy.e_commerceapp.databinding.FragmentProductListBinding
 import com.code4galaxy.e_commerceapp.model.Product
 import com.code4galaxy.e_commerceapp.network.RetrofitClient
@@ -17,6 +19,7 @@ import com.code4galaxy.e_commerceapp.utils.UIState
 import com.code4galaxy.e_commerceapp.view.adapters.ProductAdapter
 import com.code4galaxy.e_commerceapp.viewModel.ProductViewModel
 import com.code4galaxy.e_commerceapp.viewModel.ProductViewModelFactory
+import kotlin.apply
 
 class ProductListFragment: Fragment() {
     private lateinit var  binding: FragmentProductListBinding
@@ -61,11 +64,12 @@ class ProductListFragment: Fragment() {
                     val product = state.data.products
 
                     binding.rvProducts.adapter = ProductAdapter(product, onProductClick = { product ->
-                        Toast.makeText(
-                            requireContext(),
-                            product.product_name,
-                            Toast.LENGTH_LONG
-                        ).show()
+                        val bundle = Bundle().apply{
+                            putString("productId", product.product_id)
+                        }
+                        findNavController().navigate(
+                            R.id.productDetailsFragment, bundle
+                        )
                     } , onAddToCartClick = { product->
                         Toast.makeText(
                             requireContext(),

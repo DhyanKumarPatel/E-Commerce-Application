@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.code4galaxy.e_commerceapp.R
 import com.code4galaxy.e_commerceapp.databinding.ItemProductBinding
 import com.code4galaxy.e_commerceapp.model.Product
 
@@ -37,7 +38,7 @@ class ProductAdapter(private val productList: List<Product>,
 
             binding.tvDescription.text = product.description
 
-            binding.tvPrice.text = product.price
+            binding.tvPrice.text = "$ ${product.price}"
 
             binding.ratingBar.rating = product.average_rating.toFloatOrNull() ?: 0f
 
@@ -45,6 +46,7 @@ class ProductAdapter(private val productList: List<Product>,
 
             Glide.with(binding.ivProduct.context)
                 .load(imageUrl)
+                .placeholder(R.drawable.ic_cart)
                 .into(binding.ivProduct)
 
             binding.root.setOnClickListener {
