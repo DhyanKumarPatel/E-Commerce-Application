@@ -29,6 +29,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tvTotalBillLabel" />
 
+    <TextView
+        android:id="@+id/tvEmptyCart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="No products added"
+        android:textColor="@color/product_desc"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvTotalBillLabel"
+        app:layout_constraintBottom_toTopOf="@id/btnCheckout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCart"
         android:layout_width="0dp"
@@ -39,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTotalBillLabel"
-        tools:listitem="@layout/item_product" />
+        tools:listitem="@layout/item_cart" />
 
     <Button
         android:id="@+id/btnCheckout"

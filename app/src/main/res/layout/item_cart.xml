@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_product_item"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/ivProduct"
+        android:layout_width="60dp"
+        android:layout_height="100dp"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvProductName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        tools:text="RealMe Narzo 50"
+        app:layout_constraintEnd_toStartOf="@id/tvItemTotal"
+        app:layout_constraintStart_toEndOf="@id/ivProduct"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvItemTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF7F50"
+        android:textSize="15sp"
+        tools:text="$ 200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvProductName" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        tools:text="realme narzo 50 (Speed Blue, 4GB RAM+64GB Storage) Helio G96 Processor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivProduct"
+        app:layout_constraintTop_toBottomOf="@id/tvProductName" />
+
+    <TextView
+        android:id="@+id/tvUnitPriceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="6dp"
+        android:text="Unit Price"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/ivProduct"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+    <TextView
+        android:id="@+id/tvUnitPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="#FF7F50"
+        android:textSize="14sp"
+        tools:text="$ 200"
+        app:layout_constraintBottom_toBottomOf="@id/tvUnitPriceLabel"
+        app:layout_constraintStart_toEndOf="@id/tvUnitPriceLabel"
+        app:layout_constraintTop_toTopOf="@id/tvUnitPriceLabel" />
+
+    <TextView
+        android:id="@+id/tvMinus"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="#42A5F5"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvUnitPriceLabel"
+        app:layout_constraintEnd_toStartOf="@id/tvQuantity"
+        app:layout_constraintTop_toTopOf="@id/tvUnitPriceLabel" />
+
+    <TextView
+        android:id="@+id/tvQuantity"
+        android:layout_width="36dp"
+        android:layout_height="24dp"
+        android:gravity="center"
+        android:textColor="#FF7F50"
+        android:textSize="14sp"
+        tools:text="1"
+        app:layout_constraintBottom_toBottomOf="@id/tvMinus"
+        app:layout_constraintEnd_toStartOf="@id/tvPlus"
+        app:layout_constraintTop_toTopOf="@id/tvMinus" />
+
+    <TextView
+        android:id="@+id/tvPlus"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="#42A5F5"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvQuantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvQuantity" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

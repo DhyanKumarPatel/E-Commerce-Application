@@ -10,7 +10,7 @@ data class ProductDetails(
     val product_id: String,
     val product_image_url: String,
     val product_name: String,
-    val reviews: List<Any>,
+    val reviews: List<ProductReview>,
     val specifications: List<ProductSpecification>,
     val sub_category_id: String
 )
