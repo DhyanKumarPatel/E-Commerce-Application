@@ -10,6 +10,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.code4galaxy.e_commerceapp.R
 import com.code4galaxy.e_commerceapp.databinding.ActivityMainBinding
+import com.code4galaxy.e_commerceapp.utils.SessionManager
 import com.code4galaxy.e_commerceapp.view.fragments.SearchBarFragment
 
 class MainActivity : AppCompatActivity() {
@@ -52,6 +53,8 @@ class MainActivity : AppCompatActivity() {
 
             when (destination.id) {
 
+                R.id.loginFragment,
+                R.id.registerFragment,
                 R.id.smartPhoneFragment -> {
                     binding.toolBar.visibility = View.GONE
                 }
@@ -110,10 +113,18 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.menuLogout -> {
 
+                    val sessionManager = SessionManager(this)
+
+                    sessionManager.logout()
+
+                    navController.navigate(
+                        R.id.action_global_loginFragment
+                    )
+
                     Toast.makeText(
                         this,
                         "Logged Out",
-                        Toast.LENGTH_LONG
+                        Toast.LENGTH_SHORT
                     ).show()
                 }
             }

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.code4galaxy.e_commerceapp.database.CartDatabase
 import com.code4galaxy.e_commerceapp.databinding.FragmentCartBinding
 import com.code4galaxy.e_commerceapp.repository.CartRepositoryImpl
+import com.code4galaxy.e_commerceapp.utils.SessionManager
 import com.code4galaxy.e_commerceapp.utils.UIState
 import com.code4galaxy.e_commerceapp.view.adapters.CartAdapter
 import com.code4galaxy.e_commerceapp.viewModel.CartViewModel
@@ -20,8 +21,9 @@ class CartFragment: Fragment() {
 
     private lateinit var binding: FragmentCartBinding
     private lateinit var cartViewModel: CartViewModel
+    private lateinit var userId: String
 
-    private val user_id = "1"
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,11 +39,13 @@ class CartFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        userId = SessionManager(requireContext()).getUserId()
+
         setUpRecyclerView()
         setUpCartViewModel()
         setUpCartObserver()
 
-        cartViewModel.getCartItems(user_id)
+        cartViewModel.getCartItems(userId)
     }
 
     private fun setUpCartObserver() {
@@ -73,11 +77,11 @@ class CartFragment: Fragment() {
                        binding.rvCart.adapter = CartAdapter(cartItems,
                            onPlusClick = {cartItems ->
                                cartViewModel.increaseQuantity(
-                                   user_id, cartItems.productId, cartItems.quantity
+                                   userId, cartItems.productId, cartItems.quantity
                                )
                            },
                            onMinusClick = { cartItems ->
-                               cartViewModel.decreaseQuantity(user_id,cartItems.productId, cartItems.quantity)
+                               cartViewModel.decreaseQuantity(userId,cartItems.productId, cartItems.quantity)
                            })
 
                        val totalBill = cartItems.sumOf { cartItems ->

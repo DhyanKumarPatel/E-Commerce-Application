@@ -16,6 +16,7 @@ import com.code4galaxy.e_commerceapp.model.ProductDetails
 import com.code4galaxy.e_commerceapp.network.RetrofitClient
 import com.code4galaxy.e_commerceapp.repository.CartRepositoryImpl
 import com.code4galaxy.e_commerceapp.repository.ProductDetailsRepositoryImpl
+import com.code4galaxy.e_commerceapp.utils.SessionManager
 import com.code4galaxy.e_commerceapp.utils.UIState
 import com.code4galaxy.e_commerceapp.view.adapters.ProductImageAdapter
 import com.code4galaxy.e_commerceapp.view.adapters.ReviewAdapter
@@ -36,7 +37,7 @@ class ProductDetailsFragment: Fragment() {
 
     private var currentProduct: ProductDetails? = null
 
-    private val userId = "1"
+    private lateinit var userId: String
 
     private var quantity = 0
 
@@ -52,6 +53,7 @@ class ProductDetailsFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        userId = SessionManager(requireContext()).getUserId()
 
         getProductId()
         setUpViewModel()

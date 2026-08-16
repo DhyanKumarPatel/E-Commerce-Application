@@ -19,6 +19,7 @@ import com.code4galaxy.e_commerceapp.model.Product
 import com.code4galaxy.e_commerceapp.network.RetrofitClient
 import com.code4galaxy.e_commerceapp.repository.CartRepositoryImpl
 import com.code4galaxy.e_commerceapp.repository.ProductRepositoryImpl
+import com.code4galaxy.e_commerceapp.utils.SessionManager
 import com.code4galaxy.e_commerceapp.utils.UIState
 import com.code4galaxy.e_commerceapp.view.adapters.ProductAdapter
 import com.code4galaxy.e_commerceapp.viewModel.CartViewModel
@@ -36,7 +37,8 @@ class ProductListFragment: Fragment() {
 
     private lateinit var cartViewModel: CartViewModel
 
-    private val userId = "1"
+    private lateinit var sessionManager: SessionManager
+    private lateinit var userId: String
 
     private var products: List<Product> = emptyList()
 
@@ -54,6 +56,9 @@ class ProductListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        sessionManager = SessionManager(requireContext())
+        userId = sessionManager.getUserId()
 
         getSubCategoryId()
 
