@@ -85,10 +85,38 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.code4galaxy.e_commerceapp.view.fragments.SearchResultFragment"
+        android:label="Search Results">
+
+        <argument
+            android:name="searchText"
+            app:argType="string" />
+
+    </fragment>
+
     <action
         android:id="@+id/action_global_loginFragment"
         app:destination="@id/loginFragment"
         app:popUpTo="@id/nav_graph"
         app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.code4galaxy.e_commerceapp.view.fragments.CheckoutFragment"
+        android:label="CHECKOUT"
+        tools:layout="@layout/fragment_checkout" />
+
+    <fragment
+        android:id="@+id/orderConfirmedFragment"
+        android:name="com.code4galaxy.e_commerceapp.view.fragments.OrderConfirmedFragment"
+        android:label="ORDER CONFIRMED">
+
+        <argument
+            android:name="orderId"
+            app:argType="integer" />
+
+    </fragment>
 
 </navigation>

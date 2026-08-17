@@ -1,8 +1,14 @@
 package com.code4galaxy.e_commerceapp.network
 
+import com.code4galaxy.e_commerceapp.model.AddAddressRequest
+import com.code4galaxy.e_commerceapp.model.AddAddressResponse
+import com.code4galaxy.e_commerceapp.model.AddressResponse
 import com.code4galaxy.e_commerceapp.model.CategoryResponse
 import com.code4galaxy.e_commerceapp.model.LoginRequest
 import com.code4galaxy.e_commerceapp.model.LoginResponse
+import com.code4galaxy.e_commerceapp.model.OrderDetailsResponse
+import com.code4galaxy.e_commerceapp.model.OrderRequest
+import com.code4galaxy.e_commerceapp.model.OrderResponse
 import com.code4galaxy.e_commerceapp.model.ProductDetailsResponse
 import com.code4galaxy.e_commerceapp.model.ProductResponse
 import com.code4galaxy.e_commerceapp.model.RegisterRequest
@@ -46,4 +52,33 @@ interface ApiServices {
     suspend fun loginUser(
         @Body request: LoginRequest
     ): LoginResponse
+
+    @GET("Product/search")
+    suspend fun searchProducts(
+        @Query("query") searchText: String
+    ): ProductResponse
+
+    @POST("Order")
+    suspend fun placeOrder(
+        @Body request: OrderRequest
+    ): OrderResponse
+
+    @GET("User/addresses/{userId}")
+    suspend fun getAddresses(
+        @Path("userId") userId: String
+    ): AddressResponse
+
+
+    @POST("User/address")
+    suspend fun addAddress(
+        @Body request: AddAddressRequest
+    ): AddAddressResponse
+
+
+
+    @GET("Order")
+    suspend fun getOrderDetails(
+        @Query("order_id") orderId: Int
+    ): OrderDetailsResponse
+
 }

@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.code4galaxy.e_commerceapp.R
 import com.code4galaxy.e_commerceapp.database.CartDatabase
 import com.code4galaxy.e_commerceapp.databinding.FragmentCartBinding
 import com.code4galaxy.e_commerceapp.repository.CartRepositoryImpl
@@ -91,6 +93,13 @@ class CartFragment: Fragment() {
                        }
 
                        binding.tvTotalBill.text = "$ $totalBill"
+
+                       binding.btnCheckout.setOnClickListener {
+
+                           findNavController().navigate(
+                               R.id.checkoutFragment
+                           )
+                       }
                    }
 
                }
