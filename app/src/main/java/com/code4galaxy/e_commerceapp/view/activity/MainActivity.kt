@@ -2,6 +2,7 @@ package com.code4galaxy.e_commerceapp.view.activity
 
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -74,6 +75,38 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun setUpNavigationDrawer() {
+
+        val headerView =
+            binding.navigationView.getHeaderView(0)
+
+        val tvName =
+            headerView.findViewById<TextView>(
+                R.id.tvName
+            )
+
+        val tvEmail =
+            headerView.findViewById<TextView>(
+                R.id.tvEmail
+            )
+
+        val tvContactNumber =
+            headerView.findViewById<TextView>(
+                R.id.tvContactNumber
+            )
+
+        val sessionManager =
+            SessionManager(this)
+
+        tvName.text =
+            "Welcome ${sessionManager.getFullName()}"
+
+        tvEmail.text =
+            sessionManager.getEmail()
+
+        tvContactNumber.text =
+            sessionManager.getMobile()
+
+
 
         binding.navigationView.setNavigationItemSelectedListener { item ->
 
